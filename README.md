@@ -16,7 +16,9 @@ MUCExtends插件扩展了XMPP的IQ查询协议，用于获取用户加的房间�
 ## 使用
 当你安装好插件后，查询用户加入的房间列表只需要发送如下的IQ协议：
 ```xml
-<iq type='get' xmlns='jabber:client' id='b36d63aa-c8f3-4262-9368-2e7ab0858bbe:sendIQ'><query xmlns='im:iq:group'/></iq>
+<iq type='get' xmlns='jabber:client' id='b36d63aa-c8f3-4262-9368-2e7ab0858bbe:sendIQ'>
+    <query xmlns='im:iq:group'/>
+</iq>
 ```
 这时Openfire服务器的响应如下：
 ```xml
@@ -30,6 +32,9 @@ MUCExtends插件扩展了XMPP的IQ查询协议，用于获取用户加的房间�
 
 ## 开发
 只需要将上面的代码导入到对应的Openfire源码目录中，目录结构不变，使用Openfire提供的`build/build.xml` Ant工具编译。
+![set](https://user-images.githubusercontent.com/1137657/42677221-b852a374-86ad-11e8-9ddf-c06f68848f2f.png)
+![build](https://user-images.githubusercontent.com/1137657/42677224-ba0ff02c-86ad-11e8-9c1e-7a5e7576e5be.png)
+![run](https://user-images.githubusercontent.com/1137657/42677227-bbe69310-86ad-11e8-80f4-875684d618f1.png)
 
 ## 参考：
 
