@@ -1,0 +1,81 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>MUCExtends Plugin Readme</title>
+<style type="text/css">
+BODY {
+	font-size: 100%;
+}
+
+BODY, TD, TH {
+	font-family: tahoma, verdana, arial, helvetica, sans-serif;
+	font-size: 0.8em;
+}
+
+H2 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+A:hover {
+	text-decoration: none;
+}
+
+H1 {
+	font-family: tahoma, arial, helvetica, sans-serif;
+	font-size: 1.4em;
+	font-weight: bold;
+	border-bottom: 1px #ccc solid;
+	padding-bottom: 2px;
+}
+
+TT {
+	font-family: courier new;
+	font-weight: bold;
+	color: #060;
+}
+
+PRE {
+	font-family: courier new;
+	font-size: 100%;
+}
+</style>
+</head>
+<body>
+
+	<h1>MUCExtends Plugin Readme</h1>
+
+	<h2>Overview-概述</h2>
+	<p>The MUCExtends plugin extends XMPP IQ protocol for fetch the
+		rooms list which users has joined. and save the members of MUC to
+		database then users join the rooms.</p>
+	<p>MUCExtends插件扩展了XMPP的IQ查询协议，用于获取用户加的房间列表。同时当用户加入房间时，将加入的用户数据保存于数据库，实现类QQ群的功能.</p>
+	<h2>Installation-安装</h2>
+	<p>Copy the file, &quot;mucextends.jar&quot; into the plugins
+		directory of your Openfire installation. The plugin will then be
+		automatically deployed.</p>
+	<p>If you are using Openfire Enterprise make sure that you are
+		using Openfire Enterprise 3.4.0 or a latest version.</p>
+	<p>复制文件&quot;mucextends.jar&quot;到你安装的Openfire的plugins目录，插件将会自动部署，同时确保运行的Openfire版本不低于3.4.0。</p>
+	<h2>Using the Plugin-使用插件</h2>
+	<p>Once the plugin has been installed you can send the IQ protocol
+		like this:</p>
+	<p>当你安装好插件后，查询用户加入的房间列表只需要发送如下的IQ协议：</p>
+	<pre>
+&lt;iq type=&#x27;get&#x27; xmlns=&#x27;jabber:client&#x27; id=&#x27;b36d63aa-c8f3-4262-9368-2e7ab0858bbe:sendIQ&#x27;&gt;&lt;query xmlns=&#x27;im:iq:group&#x27;/&gt;&lt;/iq&gt;
+	</pre>
+	<p>Reponse will like this:</p>
+	<p>响应如下:</p>
+	<pre>
+&lt;iq type=&quot;result&quot; to=&quot;zqluo@qz-zqluo-01/web5b483285f104e&quot; id=&quot;b36d63aa-c8f3-4262-9368-2e7ab0858bbe:sendIQ&quot;&gt;
+    &lt;query xmlns=&quot;im:iq:group&quot;&gt;
+       &lt;room xmlns=&quot;&quot; nickname=&quot;zqluo&quot; id=&quot;room2@conference.localhost&quot; naturalName=&quot;room2&quot;&gt;room2&lt;/room&gt;
+    &lt;/query&gt;
+&lt;/iq&gt;
+	</pre>
+	<p>The members of room datas will be save in the table&quot;ofMucMember&quot;.</p>
+	<p>房间的用户数据将会被保存在&quot;ofMucMember&quot;表中.</p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+    <!-- Main plugin class -->
+    <class>cn.lexinzhi.openfire.plugin.MUCPersistencePlugin</class>
+    <!-- Plugin meta-data -->
+    <name>MucExtendsPlugin</name>
+    <description>房间扩展插件，实现获取用户加入房间列表和加入房间入库.</description>
+    <author>ZQLUO</author>
+
+    <version>1.0</version>
+    <date>13/07/2018</date>
+    <minServerVersion>3.4.1</minServerVersion>
+    <licenseType>GPL</licenseType>
+
+    <adminconsole>
+    </adminconsole>
+</plugin>
